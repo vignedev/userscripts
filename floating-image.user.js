@@ -23,6 +23,7 @@
     preview.style.display = 'none'
     previewVideo.id = 'preview'
     previewVideo.style.display = 'none'
+    previewVideo.loop = true
 
     style.innerText = '#preview{position:fixed; width: 320px; height: 320px; box-shadow: 0 0 1em rgba(0,0,0,0.3); background-color: black; background-size: contain; background-repeat: no-repeat; background-position:center center;}'
     document.head.appendChild(style)
@@ -42,7 +43,7 @@
             }else if(allExtensions(link.href, videos)){
                 preview.style.display = 'none'
                 if(previewVideo.src != link.href) previewVideo.src = link.href
-                previewVideo.play()
+                previewVideo.play().catch(()=>{})
                 previewVideo.style.display = ''
                 previewVideo.style.left = `${e.clientX+offset[0]}px`
                 previewVideo.style.top = `${e.clientY+offset[1]}px`
