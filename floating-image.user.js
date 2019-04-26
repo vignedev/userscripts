@@ -45,8 +45,8 @@
                 if(previewVideo.src != link.href) previewVideo.src = link.href
                 previewVideo.play().catch(()=>{})
                 previewVideo.style.display = ''
-                previewVideo.style.left = `${e.clientX+offset[0]}px`
-                previewVideo.style.top = `${e.clientY+offset[1]}px`
+                previewVideo.style.left = `${calcX(e.clientX+offset[0])}px`
+                previewVideo.style.top = `${calcY(e.clientY+offset[1])}px`
             }
         }
         link.onmouseleave = () => {
@@ -55,6 +55,13 @@
             previewVideo.pause()
         }
     })
+
+    function calcX(value){
+        return (value+320 > window.innerWidth) ? value - (value+320-window.innerWidth) : value
+    }
+    function calcY(value){
+        return (value+320 > window.innerHeight) ? value - (value+320-window.innerHeight) : value
+    }
 
     function allExtensions(input, ext){
         var valid = false
