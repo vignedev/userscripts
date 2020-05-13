@@ -3,7 +3,7 @@
 // @namespace    https://github.com/vignedev/userscripts
 // @version      0.1
 // @description  A floating image view on local file servers
-// @author       You
+// @author       vignedev
 // @match        http://192.168.1.3:*/*
 // @grant        none
 // ==/UserScript==

@@ -3,7 +3,7 @@
 // @namespace    https://github.com/vignedev/userscripts
 // @version      0.1
 // @description  God I fucking hate Messenger.
-// @author       You
+// @author       vignedev
 // @match        https://www.messenger.com/*
 // @grant        none
 // ==/UserScript==

@@ -8,3 +8,7 @@ When you hover over a link you'll get a floating window with the image inside to
 ## messenger-dkey.user.js
 
 As a student who often relies on others' notes and has to unfortunately get them from Messenger I need this to quickly download images from the Messenger image slideshow. It just basically finds a button with a text "Download" and click it.
+
+## twimg-orig.user.js
+
+Whenever you open an Twitter image in a new tab it's going to automatically redirect you to the highest resolution available.
