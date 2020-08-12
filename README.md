@@ -12,3 +12,7 @@ As a student who often relies on others' notes and has to unfortunately get them
 ## twimg-orig.user.js
 
 Whenever you open an Twitter image in a new tab it's going to automatically redirect you to the highest resolution available.
+
+## pretty-json.user.js
+
+Prettifies (or tries to) every page that ends with `.json`.
