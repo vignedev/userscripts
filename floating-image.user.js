@@ -4,13 +4,13 @@
 // @version      0.1
 // @description  A floating image view on local file servers
 // @author       vignedev
-// @match        http://192.168.1.3:*/*
+// @match        http://192.168.1.123:*/*
 // @grant        none
 // ==/UserScript==
 
 (function() {
     'use strict';
-    const images = ['.png', '.jpg', '.jpeg', '.gif', '.bmp', ':large', ':orig', ':small', ':medium', ':tiny', '.webp']
+    const images = ['.png', '.jpg', '.jpeg', '.gif', '.bmp', '.jfif', ':large', ':orig', ':small', ':medium', ':tiny', '.webp']
     const videos = ['.webm', '.mp4']
 
     var items = document.querySelectorAll("a")
@@ -25,7 +25,7 @@
     previewVideo.style.display = 'none'
     previewVideo.loop = true
 
-    style.innerText = '#preview{position:fixed; width: 320px; height: 320px; box-shadow: 0 0 1em rgba(0,0,0,0.3); background-color: black; background-size: contain; background-repeat: no-repeat; background-position:center center;}'
+    style.innerText = '#preview{pointer-events: none;position:fixed; width: 320px; height: 320px; box-shadow: 0 0 1em rgba(0,0,0,0.3); background-color: black; background-size: contain; background-repeat: no-repeat; background-position:center center;}'
     document.head.appendChild(style)
     document.body.appendChild(preview)
     document.body.appendChild(previewVideo)
@@ -38,8 +38,8 @@
                 previewVideo.style.display = 'none'
                 preview.style.display = ''
                 preview.style.backgroundImage = `url(${link.href})`
-                preview.style.left = `${e.clientX+offset[0]}px`
-                preview.style.top = `${e.clientY+offset[1]}px`
+                preview.style.left = `${calcX(e.clientX+offset[0])}px`
+                preview.style.top = `${calcY(e.clientY+offset[1])}px`
             }else if(allExtensions(link.href, videos)){
                 preview.style.display = 'none'
                 if(previewVideo.src != link.href) previewVideo.src = link.href
@@ -57,10 +57,12 @@
     })
 
     function calcX(value){
-        return (value+320 > window.innerWidth) ? value - (value+320-window.innerWidth) : value
+        //return (value+320 > window.innerWidth) ? (value - (value+320-window.innerWidth)) : value
+        return Math.min(window.innerWidth - 320, value)
     }
     function calcY(value){
-        return (value+320 > window.innerHeight) ? value - (value+320-window.innerHeight) : value
+        //return (value+320 > window.innerHeight) ? (value - (value+320-window.innerHeight)) : value
+        return Math.min(window.innerHeight - 320, value)
     }
 
     function allExtensions(input, ext){
