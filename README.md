@@ -16,3 +16,11 @@ Whenever you open an Twitter image in a new tab it's going to automatically redi
 ## pretty-json.user.js
 
 Prettifies (or tries to) every page that ends with `.json`.
+
+## ggpht-orig.user.js
+
+Similiar to `twimg-orig.user.js`, any images (eg. community posts, emotes etc.) from YouTube opened are going to redirect you to the highest resolution available.
+
+## yt-nosubs.user.js
+
+Hides all instances of subscriber counts from the site. 
