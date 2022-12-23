@@ -1,3 +1,11 @@
+/* ==UserStyle==
+@name           12/23/2022, 11:52:32 PM
+@version        1.0.0
+@namespace      https://github.com/vignedev/userscripts
+@description    Hides view and sub counts from YouTube
+@author         vignedev
+==/UserStyle== */
+
 @-moz-document domain("youtube.com") {
     #thumbnail-attribution, #owner-sub-count, #subscriber-count, #metadata #subscribers,
     .ytp-videowall-still-info-author,
