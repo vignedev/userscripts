@@ -1,5 +1,5 @@
 # userscripts
-A few Tampermonkey userscripts I made for myself to make my life a bit easier.
+A few Tampermonkey userscripts and Stylus userstyles I made for myself to make my life a bit easier.
 
 ## floating-image.user.js
 
@@ -21,6 +21,6 @@ Prettifies (or tries to) every page that ends with `.json`.
 
 Similiar to `twimg-orig.user.js`, any images (eg. community posts, emotes etc.) from YouTube opened are going to redirect you to the highest resolution available.
 
-## yt-nosubs.user.js
+## yt-nosubs.user.css
 
-Hides all instances of subscriber counts from the site. 
+Hides all instances of subscriber counts and view counts from the site. 

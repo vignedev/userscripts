@@ -1,0 +1,15 @@
+@-moz-document domain("youtube.com") {
+    #thumbnail-attribution, #owner-sub-count, #subscriber-count, #metadata #subscribers,
+    .ytp-videowall-still-info-author,
+    .ytd-video-view-count-renderer, .view-count,
+    div:not(.ytd-compact-playlist-renderer) #metadata-line.ytd-video-meta-block > *:first-child,
+    div:not(.ytd-compact-playlist-renderer) #metadata-line.ytd-grid-video-renderer > *:first-child,
+    #metadata-line .inline-metadata-item:first-of-type,
+    #metadata-line.ytd-video-meta-block>.ytd-video-meta-block:not(:first-of-type):before,
+    yt-formatted-string#info > span:nth-child(1),
+    yt-formatted-string#info > span:nth-child(2)
+    {
+        display: none !important;
+        content: '' !important;
+    }
+}
