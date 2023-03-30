@@ -4,10 +4,21 @@
 @namespace      https://github.com/vignedev/userscripts
 @description    Hides view and sub counts from YouTube
 @author         vignedev
+@preprocessor   stylus
+@var checkbox   hideGameInfo "Hide Game info" 1
+@var checkbox   hideLikes "Hide Likes" 1
+@var checkbox   hideDownloadButton "Hide Download Button" 1
+@var checkbox   hideShareButton "Hide Share Button" 1
+@var checkbox   hideThanksButton "Hide Thanks Button" 1
+@var checkbox   hideClipButton "Hide Clip Button" 1
+@var checkbox   hideCreateButton "Hide Create Button" 1
+@var checkbox   hideCountryCode "Hide Country Code from YouTube logo" 1
+@var checkbox   hideVoiceSearch "Hide Voice Search button" 1
+@var checkbox   hideGuide "Hides the guide" 1
 ==/UserStyle== */
 
 @-moz-document domain("youtube.com") {
-    #thumbnail-attribution, #owner-sub-count, #subscriber-count, #metadata #subscribers,
+    #thumbnail-attribution, #owner-sub-count, #subscriber-count, #video-count, #metadata #subscribers, #metadata > #dot,
     .ytp-videowall-still-info-author,
     .ytd-video-view-count-renderer, .view-count,
     div:not(.ytd-compact-playlist-renderer) #metadata-line.ytd-video-meta-block > *:first-child,
@@ -19,5 +30,57 @@
     {
         display: none !important;
         content: '' !important;
+    }
+    
+    if hideGameInfo {
+        .style-scope.ytd-metadata-row-container-renderer{
+            display: none !important;
+        }
+    }
+    
+    if hideLikes {
+        #segmented-like-button .cbox.yt-spec-button-shape-next--button-text-content, #vote-count-middle {
+            display: none !important;
+        }
+        #segmented-like-button .yt-spec-button-shape-next__icon{
+            margin-right: 0 !important;
+            margin-left: 0 !important;
+        }
+    }
+    
+    if hideDownloadButton {
+        ytd-download-button-renderer:has(button[aria-label="Download"]) { display: none !important; }
+    }
+    
+    if hideShareButton {
+        ytd-button-renderer:has(button[aria-label="Share"]) { display: none !important; }
+    }
+    
+    if hideThanksButton {
+        ytd-button-renderer:has(button[aria-label="Thanks"]) { display: none !important; }
+    }
+    
+    if hideClipButton {
+        ytd-button-renderer:has(button[aria-label="Clip"]) { display: none !important; }
+    }
+    
+    
+    // Toolbar
+    if hideCreateButton {
+        ytd-topbar-menu-button-renderer:has(button[aria-label="Create"]) { display: none !important; }
+    }
+    
+    if hideCountryCode {
+        span#country-code{ display: none !important; }
+    }
+    
+    if hideVoiceSearch {
+        #voice-search-button { display: none !important; }
+    }
+    
+    // Homepage sidebar
+    if hideGuide {
+        ytd-mini-guide-renderer[role="navigation"] { display: none !important; }
+        ytd-page-manager#page-manager { margin-left: 0 !important; }
     }
 }
