@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           Hide statistics from YouTube
-@version        1.1.0
+@version        1.1.1
 @namespace      https://github.com/vignedev/userscripts
 @description    Hides view and sub counts from YouTube
 @author         vignedev
@@ -15,6 +15,7 @@
 @var checkbox   hideCountryCode "Hide Country Code from YouTube logo" 1
 @var checkbox   hideVoiceSearch "Hide Voice Search button" 1
 @var checkbox   hideGuide "Hides the guide" 1
+@var checkbox   hideLiveChat "Hides the live chat (and button)" 1
 ==/UserStyle== */
 
 @-moz-document domain("youtube.com") {
@@ -82,5 +83,9 @@
     if hideGuide {
         ytd-mini-guide-renderer[role="navigation"] { display: none !important; }
         ytd-page-manager#page-manager { margin-left: 0 !important; }
+    }
+    
+    if hideLiveChat {
+        ytd-live-chat-frame#chat, .ytd-live-chat-frame#show-hide-button { display: none !important; }
     }
 }
