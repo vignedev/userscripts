@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           Hide statistics from YouTube
-@version        1.1.7
+@version        1.1.8
 @namespace      https://github.com/vignedev/userscripts
 @description    Hides view and sub counts from YouTube
 @author         vignedev
@@ -32,7 +32,10 @@
     yt-formatted-string#video-info > span:nth-child(2),
     #header-text > .ytd-video-description-infocards-section-renderer#subtitle,
     #view-count, yt-animated-rolling-number.animated-rolling-number-wiz,
-    #segmented-like-button span[role="text"]
+    #segmented-like-button span[role="text"],
+    yt-content-metadata-view-model > div.yt-content-metadata-view-model-wiz__metadata-row--metadata-row-inline:last-child > span:first-child,
+    yt-content-metadata-view-model > div.yt-content-metadata-view-model-wiz__metadata-row--metadata-row-inline:last-child > .yt-content-metadata-view-model-wiz__delimiter,
+    .style-scope.ytd-grid-video-renderer:before
     {
         display: none !important;
         content: '' !important;
@@ -75,7 +78,7 @@
     }
     
     
-    // Toolbar
+    /* Toolbar */
     if hideCreateButton {
         ytd-topbar-menu-button-renderer:has(button[aria-label="Create"]) { display: none !important; }
     }
@@ -88,7 +91,7 @@
         #voice-search-button { display: none !important; }
     }
     
-    // Homepage sidebar
+    /* Homepage sidebar */
     if hideGuide {
         ytd-mini-guide-renderer[role="navigation"] { display: none !important; }
         ytd-page-manager#page-manager { margin-left: 0 !important; }
