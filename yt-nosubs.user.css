@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           Hide statistics from YouTube
-@version        1.1.8
+@version        1.1.9
 @namespace      https://github.com/vignedev/userscripts
 @description    Hides view and sub counts from YouTube
 @author         vignedev
@@ -34,6 +34,8 @@
     #view-count, yt-animated-rolling-number.animated-rolling-number-wiz,
     #segmented-like-button span[role="text"],
     yt-content-metadata-view-model > div.yt-content-metadata-view-model-wiz__metadata-row--metadata-row-inline:last-child > span:first-child,
+    yt-content-metadata-view-model > div.yt-content-metadata-view-model-wiz__metadata-row:last-child > span:first-child,
+    yt-content-metadata-view-model > div.yt-content-metadata-view-model-wiz__metadata-row:last-child > .yt-content-metadata-view-model-wiz__delimiter,
     yt-content-metadata-view-model > div.yt-content-metadata-view-model-wiz__metadata-row--metadata-row-inline:last-child > .yt-content-metadata-view-model-wiz__delimiter,
     .style-scope.ytd-grid-video-renderer:before
     {
