@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           Hide statistics from YouTube
-@version        1.1.9
+@version        1.1.10
 @namespace      https://github.com/vignedev/userscripts
 @description    Hides view and sub counts from YouTube
 @author         vignedev
@@ -21,7 +21,7 @@
 @-moz-document domain("youtube.com") {
     #thumbnail-attribution, #owner-sub-count, #subscriber-count, #video-count, #metadata #subscribers, #metadata > #dot,
     .ytp-videowall-still-info-author,
-    .ytd-video-view-count-renderer, .view-count,
+    .ytd-video-view-count-renderer,
     div:not(.ytd-compact-playlist-renderer) #metadata-line.ytd-video-meta-block > *:first-child,
     div:not(.ytd-compact-playlist-renderer) #metadata-line.ytd-grid-video-renderer > *:first-child,
     #metadata-line .inline-metadata-item:first-of-type,
@@ -31,12 +31,21 @@
     yt-formatted-string#video-info > span:nth-child(1),
     yt-formatted-string#video-info > span:nth-child(2),
     #header-text > .ytd-video-description-infocards-section-renderer#subtitle,
-    #view-count, yt-animated-rolling-number.animated-rolling-number-wiz,
+    #view-count, .view-count,
+    /* (todo: this hid the recently uploaded text as well - is this still used?) yt-animated-rolling-number.animated-rolling-number-wiz, */
     #segmented-like-button span[role="text"],
+    /* hide view from videos */
     yt-content-metadata-view-model > div.yt-content-metadata-view-model-wiz__metadata-row--metadata-row-inline:last-child > span:first-child,
     yt-content-metadata-view-model > div.yt-content-metadata-view-model-wiz__metadata-row:last-child > span:first-child,
     yt-content-metadata-view-model > div.yt-content-metadata-view-model-wiz__metadata-row:last-child > .yt-content-metadata-view-model-wiz__delimiter,
     yt-content-metadata-view-model > div.yt-content-metadata-view-model-wiz__metadata-row--metadata-row-inline:last-child > .yt-content-metadata-view-model-wiz__delimiter,
+    /* hide views in videos which have the New badge*/
+    yt-content-metadata-view-model:has(yt-badge-view-model) > div.yt-content-metadata-view-model-wiz__metadata-row--metadata-row-inline:nth-child(2) > span:first-child,
+    yt-content-metadata-view-model:has(yt-badge-view-model) > div.yt-content-metadata-view-model-wiz__metadata-row:nth-child(2) > span:first-child,
+    yt-content-metadata-view-model:has(yt-badge-view-model) > div.yt-content-metadata-view-model-wiz__metadata-row:nth-child(2) > .yt-content-metadata-view-model-wiz__delimiter,
+    yt-content-metadata-view-model:has(yt-badge-view-model) > div.yt-content-metadata-view-model-wiz__metadata-row--metadata-row-inline:nth-child(2) > .yt-content-metadata-view-model-wiz__delimiter,
+    /* endscreen subscriber count */
+    .ytp-ce-channel-subscribers-text,
     .style-scope.ytd-grid-video-renderer:before
     {
         display: none !important;
