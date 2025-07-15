@@ -49,7 +49,7 @@
     .style-scope.ytd-grid-video-renderer:before
     {
         display: none !important;
-        content: '' !important;
+        content: unset !important;
     }
     
     if hideGameInfo {
@@ -77,21 +77,21 @@
     }
     
     if hideShareButton {
-        ytd-button-renderer:has(button[aria-label="Share"]) { display: none !important; }
+        yt-button-view-model:has(button[aria-label="Share"]) { display: none !important; }
     }
     
     if hideThanksButton {
-        ytd-button-renderer:has(button[aria-label="Thanks"]) { display: none !important; }
+        yt-button-view-model:has(button[aria-label="Thanks"]) { display: none !important; }
     }
     
     if hideClipButton {
-        ytd-button-renderer:has(button[aria-label="Clip"]) { display: none !important; }
+        yt-button-view-model:has(button[aria-label="Clip"]) { display: none !important; }
     }
     
     
     /* Toolbar */
     if hideCreateButton {
-        ytd-topbar-menu-button-renderer:has(button[aria-label="Create"]) { display: none !important; }
+        yt-button-shape:has(button[aria-label="Create"]) { display: none !important; }
     }
     
     if hideCountryCode {
