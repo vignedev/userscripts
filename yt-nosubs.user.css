@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           Hide statistics from YouTube
-@version        1.1.10
+@version        1.1.11
 @namespace      https://github.com/vignedev/userscripts
 @description    Hides view and sub counts from YouTube
 @author         vignedev
@@ -16,6 +16,7 @@
 @var checkbox   hideVoiceSearch "Hide Voice Search button" 1
 @var checkbox   hideGuide "Hides the guide" 1
 @var checkbox   hideLiveChat "Hides the live chat (and button)" 1
+@var checkbox   hideWatchNextCategories "Hide Watch Next categories" 1
 ==/UserStyle== */
 
 @-moz-document domain("youtube.com") {
@@ -110,5 +111,12 @@
     
     if hideLiveChat {
         ytd-live-chat-frame#chat, .ytd-live-chat-frame#show-hide-button { display: none !important; }
+    }
+    
+    /* Watch Next */
+    if hideWatchNextCategories {
+      ytd-watch-next-secondary-results-renderer > #items > yt-related-chip-cloud-renderer {
+        display: none !important; 
+      }
     }
 }
