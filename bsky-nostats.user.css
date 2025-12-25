@@ -1,0 +1,47 @@
+/* ==UserStyle==
+@name           [bsky] hide all stats
+@namespace      https://github.com/vignedev/userscripts
+@version        1.0.0
+@description    Hides views, likes, reposts and any statistics from Bluesky
+@author         vignedev
+@preprocessor   stylus
+@var checkbox   hideReplies "Hide Replies" 0
+@var checkbox   hideReposts "Hide Reposts" 1
+@var checkbox   hideFollowers "Hide Followers" 1
+@var checkbox   hideLikes "Hide Likes" 1
+@var checkbox   hideBookmarks "Hide Bookmarks" 1
+==/UserStyle== */
+@-moz-document domain("bsky.app") {
+  if hideReplies {
+    button[data-testid="replyBtn"] > div {
+      display: none !important; 
+    }
+  }
+  
+  if hideReposts {
+    div[data-testid="repostCount"],
+    div[data-testid="repostCount-expanded"] {
+      display: none !important; 
+    }
+  }
+  
+  if hideFollowers {
+    a[href$="/followers"] {
+      display: none !important; 
+    }
+  }
+  
+  if hideLikes {
+    div[data-testid="likeCount-expanded"],
+    div[data-testid="likeCount"] {
+      display: none !important;
+    } 
+  }
+  
+  if hideBookmarks {
+    div[data-testid="bookmarkCount-expanded"],
+    div[data-testid="bookmarkCount"] {
+      display: none !important; 
+    }
+  }
+}
