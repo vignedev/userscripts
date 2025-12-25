@@ -24,3 +24,7 @@ Similiar to `twimg-orig.user.js`, any images (eg. community posts, emotes etc.) 
 ## yt-nosubs.user.css
 
 Hides all instances of subscriber counts and view counts from the site. 
+
+## bsky-nostats.user.css
+
+Hides all statistics (reposts, likes, replies, followers, ...) on said site.
