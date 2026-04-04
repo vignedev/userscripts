@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           Hide statistics from YouTube
-@version        1.1.14
+@version        1.1.15
 @namespace      https://github.com/vignedev/userscripts
 @description    Hides view and sub counts from YouTube
 @author         vignedev
@@ -51,9 +51,12 @@
     .ytp-ce-channel-subscribers-text,
     .style-scope.ytd-grid-video-renderer:before,
     /* endscreen view counter */
-    .ytp-modern-videowall-still-view-count-and-date-info /* [n] views - [date], unfortunately hides the date too */
+    .ytp-modern-videowall-still-view-count-and-date-info, /* [n] views - [date], unfortunately hides the date too */
     /* hide views on watch-history */
-    yt-lockup-metadata-view-model > div.yt-lockup-metadata-view-model__text-container yt-content-metadata-view-model > div:nth-child(1) > span:not(:first-child)
+    yt-lockup-metadata-view-model > div.yt-lockup-metadata-view-model__text-container yt-content-metadata-view-model > div:nth-child(1) > span:not(:first-child),
+    /* 4th april views are broken again on main page */
+    .ytContentMetadataViewModelMetadataRow:has(.ytContentMetadataViewModelDelimiter) > span:nth-child(1),
+    .ytContentMetadataViewModelMetadataRow:has(.ytContentMetadataViewModelDelimiter) > .ytContentMetadataViewModelDelimiter
     {
         display: none !important;
         content: unset !important;
