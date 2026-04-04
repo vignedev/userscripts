@@ -61,13 +61,13 @@
         display: none !important;
         content: unset !important;
     }
-    
+
     if hideGameInfo {
         .style-scope.ytd-metadata-row-container-renderer{
             display: none !important;
         }
     }
-    
+
     if hideLikes {
         #segmented-like-button .cbox.yt-spec-button-shape-next--button-text-content,
         #segmented-like-button .cbox.yt-spec-button-shape-next__button-text-content,
@@ -81,51 +81,51 @@
             margin-left: 0 !important;
         }
     }
-    
+
     if hideDownloadButton {
         ytd-download-button-renderer:has(button[aria-label="Download"]) { display: none !important; }
     }
-    
+
     if hideShareButton {
         yt-button-view-model:has(button[aria-label="Share"]) { display: none !important; }
     }
-    
+
     if hideThanksButton {
         yt-button-view-model:has(button[aria-label="Thanks"]) { display: none !important; }
     }
-    
+
     if hideClipButton {
         yt-button-view-model:has(button[aria-label="Clip"]) { display: none !important; }
     }
-    
-    
+
+
     /* Toolbar */
     if hideCreateButton {
         yt-button-shape:has(button[aria-label="Create"]) { display: none !important; }
     }
-    
+
     if hideCountryCode {
         span#country-code{ display: none !important; }
     }
-    
+
     if hideVoiceSearch {
         #voice-search-button { display: none !important; }
     }
-    
+
     /* Homepage sidebar */
     if hideGuide {
         ytd-mini-guide-renderer[role="navigation"] { display: none !important; }
         ytd-page-manager#page-manager { margin-left: 0 !important; }
     }
-    
+
     if hideLiveChat {
         ytd-live-chat-frame#chat, .ytd-live-chat-frame#show-hide-button { display: none !important; }
     }
-    
+
     /* Watch Next */
     if hideWatchNextCategories {
       ytd-watch-next-secondary-results-renderer > #items > yt-related-chip-cloud-renderer {
-        display: none !important; 
+        display: none !important;
       }
     }
 }
