@@ -57,7 +57,8 @@
     /* 4th april views are broken again on main page */
     .ytContentMetadataViewModelMetadataRow:has(.ytContentMetadataViewModelDelimiter) > span:nth-child(1),
     .ytContentMetadataViewModelMetadataRow:has(.ytContentMetadataViewModelDelimiter) > .ytContentMetadataViewModelDelimiter,
-    .shortsLockupViewModelHostOutsideMetadataSubhead.shortsLockupViewModelHostMetadataSubhead
+    .shortsLockupViewModelHostOutsideMetadataSubhead.shortsLockupViewModelHostMetadataSubhead,
+    .yt-lockup-view-model:has(.yt-badge-shape--thumbnail-live) yt-content-metadata-view-model > .ytContentMetadataViewModelMetadataRow:nth-child(2)
     {
         display: none !important;
         content: unset !important;
@@ -79,7 +80,7 @@
             display: none !important;
         }
         #segmented-like-button .yt-spec-button-shape-next__icon,
-        button.yt-spec-button-shape-next[aria-label*="like"] .yt-spec-button-shape-next__icon{
+        button.yt-spec-button-shape-next[aria-label*="like"] .yt-spec-button-shape-next__icon {
             margin-right: 0 !important;
             margin-left: 0 !important;
         }
