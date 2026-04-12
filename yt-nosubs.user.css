@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           Hide statistics from YouTube
-@version        1.1.17
+@version        1.1.18
 @namespace      https://github.com/vignedev/userscripts
 @description    Hides view and sub counts from YouTube
 @author         vignedev
@@ -58,7 +58,8 @@
     .ytContentMetadataViewModelMetadataRow:has(.ytContentMetadataViewModelDelimiter) > span:nth-child(1),
     .ytContentMetadataViewModelMetadataRow:has(.ytContentMetadataViewModelDelimiter) > .ytContentMetadataViewModelDelimiter,
     .shortsLockupViewModelHostOutsideMetadataSubhead.shortsLockupViewModelHostMetadataSubhead,
-    .yt-lockup-view-model:has(.yt-badge-shape--thumbnail-live) yt-content-metadata-view-model > .ytContentMetadataViewModelMetadataRow:nth-child(2)
+    .yt-lockup-view-model:has(.yt-badge-shape--thumbnail-live) yt-content-metadata-view-model > .ytContentMetadataViewModelMetadataRow:nth-child(2),
+    .ytLockupViewModelHost:has(.yt-badge-shape--thumbnail-live) yt-content-metadata-view-model > .ytContentMetadataViewModelMetadataRow:nth-child(2)
     {
         display: none !important;
         content: unset !important;
