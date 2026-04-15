@@ -59,7 +59,7 @@
     .ytContentMetadataViewModelMetadataRow:has(.ytContentMetadataViewModelDelimiter) > .ytContentMetadataViewModelDelimiter,
     .shortsLockupViewModelHostOutsideMetadataSubhead.shortsLockupViewModelHostMetadataSubhead,
     .yt-lockup-view-model:has(.yt-badge-shape--thumbnail-live) yt-content-metadata-view-model > .ytContentMetadataViewModelMetadataRow:nth-child(2),
-    .ytLockupViewModelHost:has(.yt-badge-shape--thumbnail-live) yt-content-metadata-view-model > .ytContentMetadataViewModelMetadataRow:nth-child(2)
+    .ytLockupViewModelHost:has(.ytBadgeShapeThumbnailLive) yt-content-metadata-view-model > .ytContentMetadataViewModelMetadataRow:nth-child(2)
     {
         display: none !important;
         content: unset !important;
