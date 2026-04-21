@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           Hide statistics from YouTube
-@version        1.1.18
+@version        1.1.19
 @namespace      https://github.com/vignedev/userscripts
 @description    Hides view and sub counts from YouTube
 @author         vignedev
@@ -77,11 +77,13 @@
         button.yt-spec-button-shape-next[aria-label*="like"] .yt-spec-button-shape-next__button-text-content
         #vote-count-middle,
         like-button-view-model span[role="text"],
-        dislike-button-view-model span[role="text"]{
+        dislike-button-view-model span[role="text"],
+        .ytSpecButtonShapeNextButtonTextContent:has(>.animatedRollingNumberHost){
             display: none !important;
         }
         #segmented-like-button .yt-spec-button-shape-next__icon,
-        button.yt-spec-button-shape-next[aria-label*="like"] .yt-spec-button-shape-next__icon {
+        button.yt-spec-button-shape-next[aria-label*="like"] .yt-spec-button-shape-next__icon,
+        .ytLikeButtonViewModelHost .ytSpecButtonShapeNextIcon{
             margin-right: 0 !important;
             margin-left: 0 !important;
         }
